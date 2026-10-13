@@ -4,135 +4,175 @@
 
 *Nutritional care as a pillar of breast health.*
 
-> “...and by His stripes we are healed.”   Isaiah 53:5 (KJV)
+> “...and by His stripes we are healed.” — Isaiah 53:5 (KJV)
+
 
 ## About the Project
 
-**Kulungile  It Is Well Dietitians** The platform aims to make nutrition information accessible, communicate the practice's services, build trust with prospective patients, and simplify the process of making appointment enquiries.
+**Kulungile – It Is Well Dietitians**  Connecting professional nutrition care with accessible health education, clear service information, and a welcoming patient experience.
 
-Inspired by the belief that nutrition plays an important role in overall well-being, the project combines professional healthcare communication with a compassionate, faith-inspired brand identity.
+The platform will help prospective patients learn about the practice, explore its nutrition services, access educational resources, and make enquiries about consultations.
 
-The website will prioritise accessibility, responsive design, clear navigation, and a seamless experience across desktop, tablet, and mobile devices.
+Rooted in a faith-inspired vision of wellness and hope, the project seeks to communicate compassion and professionalism while maintaining a commitment to evidence-informed nutrition education and responsible healthcare communication.
+
+The website is designed with accessibility, performance, responsive layouts, and usability in mind, providing a consistent experience across desktop, tablet, and mobile devices.
 
 ## Project Objectives
 
-- **Professional digital presence:** Introduce the practice, its philosophy, and its areas of expertise.
-- **Nutrition education:** Provide accessible, evidence-informed information about nutrition and health.
-- **Service discovery:** Help visitors understand the nutritional services offered and determine which services may suit their needs.
-- **Patient engagement:** Make it easy for prospective patients to contact the practice and enquire about consultations.
-- **Responsive experience:** Deliver a consistent and intuitive experience across different screen sizes.
-- **Trust and credibility:** Present verified professional credentials, appropriate health information, and clear contact details.
-- **Faith-inspired identity:** Reflect the practice's Christian foundation through thoughtful messaging while maintaining professional healthcare standards.
+- **Establish a professional online presence:** Communicate the practice's identity, philosophy, expertise, and services.
+- **Improve access to nutrition information:** Present clear, accessible, evidence-informed educational content.
+- **Support patient engagement:** Make it straightforward for prospective patients to discover services and enquire about consultations.
+- **Communicate breast health and nutrition:** Provide relevant educational content supported by appropriate clinical evidence and professional review.
+- **Build trust and credibility:** Present accurate practitioner information, verified credentials, and clear contact details.
+- **Reflect the practice's values:** Integrate its Christian foundation into a compassionate and welcoming brand identity.
+- **Deliver an accessible digital experience:** Apply responsive design, semantic HTML, readable typography, and inclusive interaction patterns.
 
 ## Planned Features
 
-- Modern homepage with a clear value proposition and prominent call to action.
-- About section introducing the dietitian and the practice's philosophy.
-- Dedicated nutrition and dietetics service pages.
-- Breast health and nutrition education, where supported by appropriate clinical evidence.
-- Nutrition articles and educational resources.
-- Appointment enquiry form and WhatsApp contact integration.
-- Frequently asked questions.
-- Contact page with location and relevant practice details.
-- Search-engine optimisation and accessible page structure.
-- Responsive layouts and reusable UI components.
+### Core Website
+
+- **Homepage:** Introduce the practice, communicate its value proposition, highlight selected services, and provide clear calls to action.
+- **About:** Present the dietitian, professional background, qualifications, approach to care, and practice philosophy.
+- **Services:** Explain the nutrition and dietetics services offered, with dedicated pages where appropriate.
+- **Breast Health and Nutrition:** Provide relevant educational information, subject to the practice's confirmed clinical focus and professional review.
+- **Contact and Enquiries:** Provide contact information, a patient enquiry form, and WhatsApp integration if required.
+- **Frequently Asked Questions:** Address common questions about consultations, services, and the appointment process.
+
+### Educational Content
+
+- Nutrition articles and practical educational resources.
+- Searchable resources or categories as the content library grows.
+- Clear distinctions between general health education and individualised professional advice.
+
+### User Experience and Discoverability
+
+- Responsive, mobile-first layouts.
+- Accessible navigation, forms, and interactive components.
+- Search-engine-friendly page structure and metadata.
+- Optimised images and performance-conscious implementation.
+- Consistent visual components and clear navigation paths to enquiries.
+
+Features will be prioritised according to the agreed project scope and the practice's operational needs.
 
 ## Design Philosophy
 
-The website will use a modern, welcoming visual identity that balances the professionalism of a healthcare practice with the warmth of a wellness brand.
+The visual identity will combine the credibility expected of a healthcare practice with the warmth of a contemporary wellness brand.
 
-The design direction includes:
+The design will draw inspiration from modern dietetics and nutrition websites while establishing a distinctive identity for Kulungile – It Is Well Dietitians.
 
-- Clean layouts and generous whitespace.
-- Refined typography and a clear visual hierarchy.
-- Natural imagery and carefully selected colours.
-- Consistent buttons, navigation, forms, and content components.
-- Accessible colour contrast and readable text.
-- Subtle interactions that enhance usability without distracting from the content.
+Design principles include:
 
-The visual direction takes inspiration from contemporary dietetics and nutrition websites while maintaining an original identity for Kulungile – It Is Well Dietitians.
+- **Clarity:** Organise information around patient needs and make important actions easy to find.
+- **Warmth:** Use considered typography, natural imagery, and a welcoming visual tone.
+- **Consistency:** Establish reusable design patterns for navigation, buttons, service cards, forms, and content sections.
+- **Accessibility:** Prioritise readable text, sufficient colour contrast, semantic structure, and keyboard-friendly interactions.
+- **Responsiveness:** Adapt layouts and interactions to different devices and screen sizes.
+- **Purposeful interaction:** Use subtle animations and transitions only where they improve the experience.
+- **Originality:** Develop an independent visual identity rather than reproducing the layouts, branding, or content of reference websites.
 
 ## Technology Stack
 
-The final technology stack will be documented as implementation progresses.
+The final stack will be determined by the project's functional requirements and confirmed during implementation.
 
-Potential technologies include:
+| Area | Proposed Technology |
+|---|---|
+| Frontend framework | Next.js with React |
+| Programming language | TypeScript |
+| Styling | Tailwind CSS |
+| Forms and validation | Type-safe form handling and server-side validation where applicable |
+| Version control | Git and GitHub |
+| Deployment | Vercel or another suitable hosting provider |
 
-- **Frontend:** Next.js and React
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS
-- **Forms and validation:** Type-safe form handling and input validation
-- **Deployment:** Vercel or another suitable hosting platform
-- **Version control:** Git and GitHub
+Additional services, such as a content management system, appointment scheduler, database, or email provider, will be introduced only where they address a confirmed requirement.
 
-Technologies will be confirmed based on the project's requirements and actual implementation.
+The implemented stack and any additional dependencies will be documented as the project evolves.
 
-## Development Principles
+## Software Engineering Principles
 
-The project will follow established software engineering practices:
+The project will follow maintainable and security-conscious development practices:
 
-- Reusable, maintainable components.
-- Separation of presentation, business logic, and data handling where appropriate.
-- Semantic HTML and accessible interactions.
-- Responsive and mobile-first development.
-- Input validation and secure handling of submitted information.
-- Environment variables for configuration and sensitive credentials.
-- Clear documentation and meaningful Git commit messages.
-- Performance, maintainability, and search-engine discoverability.
+- Reusable components with clear responsibilities.
+- Separation of UI components, application logic, and external integrations where appropriate.
+- Strong typing and explicit data contracts using TypeScript.
+- Semantic HTML and accessible interaction patterns.
+- Responsive, performance-conscious implementation.
+- Client-side validation for usability and server-side validation for submitted data where applicable.
+- Secure configuration through environment variables and appropriate secret management.
+- Meaningful Git commits and structured development changes.
+- Appropriate error handling and clear user feedback.
+- Testing of critical functionality, forms, navigation, and responsive behaviour.
+- Documentation of setup instructions, technical decisions, and deployment requirements.
 
-## Healthcare Content and Privacy
+## Healthcare Content, Privacy and Security
 
-Health-related content will be developed with accuracy, clarity, and appropriate clinical oversight. Educational information is intended to support patient understanding and should not replace individual assessment or professional medical advice.
+Healthcare-related content requires particular care. Educational material will be developed with accuracy, clarity, and appropriate professional review.
 
-The website will avoid unsupported medical claims, particularly concerning breast health, disease prevention, and treatment outcomes.
+The website will avoid unsupported claims about nutrition, breast health, disease prevention, or treatment outcomes. Nutrition education will complement, rather than replace, individual assessment and appropriate medical care.
 
-Any patient information collected through enquiry or booking forms must be handled responsibly, with appropriate privacy notices, data minimisation, and safeguards aligned with applicable South African data-protection requirements, including POPIA.
+If the website collects personal information, the implementation will account for applicable South African data-protection requirements, including the Protection of Personal Information Act (POPIA).
 
-## Project Status
+Privacy-conscious development will include:
 
-**Status:** In development
+- Collecting only information necessary for the intended enquiry or booking process.
+- Providing an appropriate privacy notice.
+- Protecting submitted information through suitable technical and organisational safeguards.
+- Avoiding unnecessary collection of sensitive health information.
+- Restricting access to personal information and managing third-party integrations responsibly.
 
-The project is being developed iteratively, with the initial focus on establishing the visual identity, structuring the website, implementing the core pages, and refining the patient enquiry experience.
+Any future patient portal or clinical-data functionality would require a separate assessment of security, privacy, access controls, and operational requirements.
 
 ## Future Enhancements
 
-Potential enhancements include:
+Potential future improvements include:
 
-- Online appointment scheduling.
-- A content management system for nutrition articles.
-- Searchable educational resources.
-- Additional service-specific landing pages.
-- Analytics and performance monitoring, subject to appropriate privacy considerations.
-- Integration with suitable practice-management tools.
+- Online appointment scheduling and booking management.
+- A content management system for publishing nutrition articles.
+- Expanded educational resources and service-specific landing pages.
+- Additional practitioner profiles, if applicable.
+- Privacy-conscious analytics and performance monitoring.
+- Integration with suitable practice-management or communication tools.
 
-These enhancements will depend on the practice's operational requirements.
+These enhancements will be evaluated according to their practical value, complexity, cost, and suitability for the practice.
 
 ## Getting Started
 
-Once the application has been implemented, clone the repository and install its dependencies:
+### Prerequisites
+
+For the proposed Next.js implementation, you will need:
+
+- Node.js compatible with the project's Next.js version.
+- npm or the package manager specified by the repository.
+- Git.
+
+### Installation
+
+Clone the repository:
 
 ```bash
 git clone https://github.com/RoselineDC/kulungile-itiswell-diatitians.git
 cd kulungile-itiswell-diatitians
 ```
 
-Install dependencies using the package manager configured for the project. For an npm-based application:
+Install the dependencies:
 
 ```bash
 npm install
+```
+
+Start the development server:
+
+```bash
 npm run dev
 ```
 
-Open `http://localhost:3000` in your browser.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-*Note: These commands assume an npm-based Next.js application. Update the instructions if the repository uses a different setup.*
+*These instructions assume that the repository contains a configured Next.js application with the corresponding npm scripts. Update them if the actual project setup differs.*
 
 ## Author
 
 **Roseline Dangazela**
 
-GitHub: [@RoselineDC](https://github.com/RoselineDC)
+Software developer focused on building maintainable, user-centred digital solutions.
 
-
-*Built with a focus on thoughtful design, accessible nutrition information, and patient-centred digital experiences.*
-
+GitHub: [@RoselineDC](https://github.com/RoselineDC)    
