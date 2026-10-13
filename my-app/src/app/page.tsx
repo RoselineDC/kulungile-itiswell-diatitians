@@ -358,7 +358,7 @@ export default function Home() {
         </a>
         <p>Nutrition. Wellness. Hope.</p>
         <span className="footer-copyright">
-          © {new Date().getFullYear()} Kulungile – It Is Well Dietitians
+          © 2026 Kulungile – It Is Well...
         </span>
       </footer>
     </main>
