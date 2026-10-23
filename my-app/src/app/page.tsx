@@ -1,3 +1,9 @@
+"use client"
+
+import Image from "next/image";
+import logo from '../../public/logo-mark-wide.png';
+import { useState } from "react";
+
 
 const services = [
   {
@@ -23,33 +29,49 @@ const services = [
   },
 ];
 
-function ArrowIcon() {
+function ArrowIcon({ className = "" }: { className?: string }) {
   return (
     <svg
-      aria-hidden="true"
+      className={`arrow-icon ${className}`}
       viewBox="0 0 24 24"
       fill="none"
-      className="arrow-icon"
+      stroke="currentColor"
+      strokeWidth="2"
+      aria-hidden="true"
     >
-      <path
-        d="M4.75 12h14.5m-6-6 6 6-6 6"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+      <path d="M5 12h14M13 6l6 6-6 6" />
     </svg>
   );
 }
 
+
 export default function Home() {
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("sending");
+    const form = e.currentTarget;
+    const data = Object.fromEntries(new FormData(form));
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error();
+      form.reset();
+      setStatus("sent");
+    } catch {
+      setStatus("error");
+    }
+  }
   return (
     <main>
       <header className="site-header">
         <a className="brand" href="#home" aria-label="Kulungile home">
-          <span className="brand-mark" aria-hidden="true">
-            k.
-          </span>
+          <Image src={logo} alt="" width={94} height={99} />
           <span className="brand-name">
             <strong>Kulungile</strong>
             <small>IT IS WELL DIETITIANS</small>
@@ -64,17 +86,14 @@ export default function Home() {
         </nav>
 
         <a className="header-cta" href="#contact">
-          Get in touch <ArrowIcon />
+          Contact Us
         </a>
       </header>
 
       <section className="hero" id="home">
+       
         <div className="hero-copy">
-          <p className="eyebrow">
-            <span className="eyebrow-line" />
-            NUTRITION · WELLNESS · HOPE
-          </p>
-
+          
           <h1>
             A more
             <br />
@@ -85,15 +104,12 @@ export default function Home() {
 
           <p className="hero-description">
             Thoughtful nutrition care, meaningful education and a
-            compassionate approach to wellbeing — centred around you.
+            compassionate approach to wellbeing  centred around you.
           </p>
 
           <div className="hero-actions">
             <a className="button button-dark" href="#services">
               Explore our services <ArrowIcon />
-            </a>
-            <a className="text-link" href="#about">
-              Discover our approach
             </a>
           </div>
 
@@ -124,21 +140,10 @@ export default function Home() {
             <span>FLOURISH</span>
           </div>
         </div>
-
-        <div className="hero-bottom">
-          <span>01 / A THOUGHTFUL APPROACH TO NUTRITION</span>
-          <a href="#about">
-            Scroll to discover <span aria-hidden="true">↓</span>
-          </a>
-        </div>
+         
       </section>
 
       <section className="intro-section section-pad" id="about">
-        <div className="section-kicker">
-          <span>01</span>
-          <span>THE HEART OF KULUNGILE</span>
-        </div>
-
         <div className="intro-grid">
           <h2>
             Wellness begins
@@ -153,7 +158,7 @@ export default function Home() {
               food.
             </p>
             <p>
-              Kulungile – It Is Well Dietitians aims to make nutrition
+              Kulungile  It Is Well Dietitians aims to make nutrition
               guidance more approachable through compassionate care,
               accessible education and respect for each person&apos;s
               journey.
@@ -186,10 +191,10 @@ export default function Home() {
       <section className="services-section section-pad" id="services">
         <div className="section-heading">
           <div>
-            <div className="section-kicker section-kicker-light">
+            {/* <div className="section-kicker section-kicker-light">
               <span>02</span>
               <span>HOW WE CAN HELP</span>
-            </div>
+            </div> */}
             <h2>
               Nutrition care,
               <br />
@@ -221,11 +226,6 @@ export default function Home() {
             </article>
           ))}
         </div>
-
-        <p className="content-note">
-          Service descriptions are preliminary and must be confirmed by
-          the practice before publication.
-        </p>
       </section>
 
       <section className="breast-section section-pad" id="breast-health">
@@ -239,10 +239,6 @@ export default function Home() {
         </div>
 
         <div className="breast-copy">
-          <div className="section-kicker">
-            <span>03</span>
-            <span>A FOCUS ON WELLBEING</span>
-          </div>
 
           <h2>
             Breast health
@@ -272,10 +268,6 @@ export default function Home() {
 
       <section className="journey-section section-pad" id="resources">
         <div className="journey-heading">
-          <div className="section-kicker">
-            <span>04</span>
-            <span>YOUR JOURNEY</span>
-          </div>
           <h2>
             A little clarity.
             <br />
@@ -318,34 +310,67 @@ export default function Home() {
           “...and by His stripes we are healed.”
         </blockquote>
         <p className="scripture-reference">ISAIAH 53:5 · KJV</p>
-        <p className="scripture-note">
-          A reflection of the faith that inspires the practice.
-        </p>
       </section>
 
       <section className="contact-section section-pad" id="contact">
-        <div>
-          <div className="section-kicker section-kicker-light">
-            <span>05</span>
-            <span>LET&apos;S CONNECT</span>
-          </div>
+        <div className="contact-info">
           <h2>
             Your wellbeing
             <br />
             deserves <em>care.</em>
           </h2>
           <p>
-            Have a question about the practice or its services?
-            Get in touch to find out more about the next steps.
+            Have a question about the practice or its services? Get in touch to
+            find out more about the next steps.
           </p>
+
+          <ul className="contact-details">
+            <li>
+              <span className="contact-label">EMAIL</span>
+              <a href="mailto:info@yourpractice.co.za">info@kulungile.co.za</a>
+            </li>
+            <li>
+              <span className="contact-label">PHONE</span>
+              <a href="tel:+27000000000">+27 68 247 0633</a>
+            </li>
+          </ul>
         </div>
-        <a className="button button-light" href="mailto:">
-          Contact the practice <ArrowIcon />
-        </a>
-        <p className="contact-note">
-          Contact details and appointment arrangements will be added
-          once confirmed by the practice.
-        </p>
+
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <label>
+            Name
+            <input type="text" name="name" required autoComplete="name" />
+          </label>
+
+          <label>
+            Email
+            <input type="email" name="email" required autoComplete="email" />
+          </label>
+
+          <label>
+            Phone <span className="optional">(optional)</span>
+            <input type="tel" name="phone" autoComplete="tel" />
+          </label>
+
+          <label>
+            Message
+            <textarea name="message" rows={4} required />
+          </label>
+
+          {/* honeypot: hidden from people, bots fill it in */}
+          <input type="text" name="website" tabIndex={-1} autoComplete="off"
+            className="hp" aria-hidden="true" />
+
+          <button className="button button-light" type="submit" disabled={status === "sending"}>
+            {status === "sending" ? "Sending..." : "Send message"} <ArrowIcon />
+          </button>
+
+          {status === "sent" && <p className="form-status">Thank you, we'll be in touch soon.</p>}
+          {status === "error" && <p className="form-status">Something went wrong. Please email or call us instead.</p>}
+          <p className="form-privacy">
+            Please don't include medical details in this form.
+          </p>
+        </form>
       </section>
 
       <footer className="site-footer">
